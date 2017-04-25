@@ -1,0 +1,25 @@
+---
+layout: page
+title: Blog
+---
+
+<div class="posts">
+	{% for post in site.posts %}
+	<div class="post-teaser">
+		<header>
+			<h2>
+				<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+					{{ post.title }}
+				</a>
+			</h2>
+			<p class="meta">
+				{{ post.date | date: "%B %-d, %Y" }}
+			</p>
+		</header>
+		<!-- <div class="excerpt">
+			{{ post.excerpt | strip_newlines | truncate: 120 }}
+		</div>
+		<a class="button special" href="{{ post.url | prepend: site.baseurl }}">Read more
+		</a> -->
+	{% endfor %}
+</div>
