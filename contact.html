@@ -3,6 +3,22 @@ layout: page
 title: Contact
 ---
 
-<h4>Let's stop, collaborate, and listen</h4>
-<h2>Hit me up on LinkedIn!</h2>
+<section id="contact">
+	<h4>Let's stop, collaborate, and listen</h4>
+	<div class="inner">
+		<ul class="icons">
+			{% for socloc in site.social %}
+			{% if socloc[1] %}
+			{% if socloc[0] == 'email' %}
+			<li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-envelope-o"
+						 ><span class="label">E-mail</span></a></li>
+			{% else %}
+			<li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-{{ socloc[0] }}"
+						 ><span class="label">{{ socloc[0] }}</span></a></li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</section>
 
